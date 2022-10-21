@@ -21,11 +21,9 @@ const flightSchema = new Schema({
     departs: {
         type: Number,
         default: function() {
-            return new Date().getFullYear();
-        }
+            return new Date().getFullYear()
+        },
     },
-}, {
-    timestamps: true
 });
 
-module.exports = mongoose.model('Flight', flightSchema)
+module.exports = mongoose.model('Flight', flightSchema);
