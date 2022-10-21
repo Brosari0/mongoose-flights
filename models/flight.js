@@ -12,7 +12,7 @@ const flightSchema = new Schema({
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
         default: 'DEN'
     },
-    flightNu: {
+    flightNo: {
         type: Number,
         required: true,
         min: 10,
@@ -23,7 +23,9 @@ const flightSchema = new Schema({
         default: function() {
             return new Date().getFullYear();
         }
-    }
+    },
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Flight', flightSchema)

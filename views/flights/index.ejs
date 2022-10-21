@@ -6,14 +6,14 @@
         <th>Property</th>
         <th>Type</th>
         <th>Validations</th>
-        <th>Deafault Value</th>
+        <th>Default Value</th>
     </thead>
     <tbody>
         <% flights.forEach(function(f) { %>
             <tr>
                 <td><%= f.airline %></td>
                 <td><%= f.airport %></td>
-                <td><%= f.flightNu %></td>
+                <td><%= f.flightNo %></td>
                 <td><%= f.departs %></td>
             </tr>
             <% }); %>
