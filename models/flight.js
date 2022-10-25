@@ -32,6 +32,7 @@ const flightSchema = new Schema({
         type: Date,
         default: Date.now(),
     },
+
     destinations: [destinationSchema]
 });
 

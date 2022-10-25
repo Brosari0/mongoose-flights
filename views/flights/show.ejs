@@ -7,6 +7,7 @@
     <th>flight-Number</th>
     <th>Departs</th>
     <th>Destinations</th>
+    <th>Tickets</th>
   </thead>
   <tbody>
     <tr>
@@ -28,17 +29,36 @@
                 <h2>No Current Destination</h2>
                 <% } %>
             </ul>
+            <ul>
+          <% if (tickets.length) { %> 
+            <% tickets.forEach(function(ticket) { %>
+                <li>
+                <%= ticket.seat %>
+                <%= ticket.price %>
+            </li>
+            <% }) %> 
+            <% } else { %>
+                <h2>No Current Tickets</h2>
+                <% } %>
+            </ul>
         </td>
     </tr>
 </tbody>
 </table>
+<form id="addTicket" action="/flights/<%= flight._id %>/tickets" method="POST">
+  <label for="ticketId">Seat</label>
+<input name="seat"><br>
+<label for="price">Price</label>
+<input name="price" type="number"><br>
+<input type="submit" value="Add Ticket">
+</form>
 <form
   id="destinations"
   method="POST"
   action="/flights/<%= flight._id %>/destinations"
 >
   <label>Arrival Time:</label>
-  <input type="date" name="arrival">
+  <input type="date" name="arrival"><br>
   <label>Airport:</label>
   <select name="airport">
     <option value="AUS">AUS</option>
@@ -47,7 +67,7 @@
     <option value="LAX">LAX</option>
     <option value="SAN">SAN</option>
     <option value="DEN" selected>DEN</option>
-  </select>
+  </select><br>
   <input type="submit" value="Add Destinations">
 </form>
 
