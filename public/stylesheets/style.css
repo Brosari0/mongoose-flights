@@ -9,7 +9,7 @@ body {
   display: grid;
   background-color: purple;
   color: orange;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px 70px 1fr;
   grid-template-areas: 
     "nav"
     "main"
@@ -29,15 +29,19 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  color: orange;
+  background-color: purple;
+  border: solid 1px orange;
 }
 
 nav > a:hover:not(.active) {
-  color: white;
+  color: purple;
   background-color: orange;
+  border: solid 1px purple;
 }
 
 nav > a.active {
-  color: white;
+  color: purple;
   cursor: default;
 }
 

@@ -6,7 +6,7 @@
     <th>Airport</th>
     <th>flight-Number</th>
     <th>Departs</th>
-    <th>destinations</th>
+    <th>Destinations</th>
   </thead>
   <tbody>
     <tr>
@@ -15,14 +15,19 @@
       <td><%= flight.flightNo %></td>
       <td><%= flight.departs %></td>
       <td>
+        <ul>
         <% if (flight.destinations.length) { %> 
+            <% flight.destinations.sort((a, b) => a.arrival - b.arrival); %>
             <% flight.destinations.forEach(function(destination) { %>
+                <li>
                 <%= destination.airport %>
                 <%= destination.arrival %>
+            </li>
             <% }) %> 
             <% } else { %>
                 <h2>No Current Destination</h2>
                 <% } %>
+            </ul>
         </td>
     </tr>
 </tbody>
