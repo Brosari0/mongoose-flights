@@ -28,6 +28,8 @@
             <% } else { %>
                 <h2>No Current Destination</h2>
                 <% } %>
+              </td>
+              <td>
             </ul>
             <ul>
           <% if (tickets.length) { %> 
@@ -41,17 +43,11 @@
                 <h2>No Current Tickets</h2>
                 <% } %>
             </ul>
-        </td>
+          </td>
     </tr>
 </tbody>
 </table>
-<form id="addTicket" action="/flights/<%= flight._id %>/tickets" method="POST">
-  <label for="ticketId">Seat</label>
-<input name="seat"><br>
-<label for="price">Price</label>
-<input name="price" type="number"><br>
-<input type="submit" value="Add Ticket">
-</form>
+<a href="/flights/<%= flight._id %>/tickets/new"><button>Add Ticket</button></a>
 <form
   id="destinations"
   method="POST"
